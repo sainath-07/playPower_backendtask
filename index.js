@@ -1,4 +1,5 @@
 const epxress = require('express')
+const cors = require('cors')
 const app = epxress()
 
 require('./dbconnection/studentdetails')
@@ -9,6 +10,7 @@ const studentdetails = require('./route/studentdetails')
 const assginmentdetails = require('./route/studentassignment')
 
 app.use(epxress.json())
+app.use(cors())
 app.use('/', studentdetails)
 app.use('/', assginmentdetails)
 
